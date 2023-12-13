@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'home_screen.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -60,21 +62,26 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
                 const   SizedBox(height: 20,),
-                Container(
-                  height: 50,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius:BorderRadius.circular(25),
-                    gradient:const  LinearGradient(
-                      colors: [
-                         Colors.amber,
-                        Colors.pink
-                      ]
-                    ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                  },
+                  child: Container(
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius:BorderRadius.circular(25),
+                      gradient:const  LinearGradient(
+                        colors: [
+                           Colors.amber,
+                          Colors.pink
+                        ]
+                      ),
 
+                    ),
+                    alignment: Alignment.center,
+                    child:const  Text("LOG IN",style: TextStyle(color: Colors.white,fontSize: 20),),
                   ),
-                  alignment: Alignment.center,
-                  child:const  Text("LOG IN",style: TextStyle(color: Colors.white,fontSize: 20),),
                 ),
               const   SizedBox(height: 20,),
                 Text("Forget Password?",style: TextStyle(fontSize: 17,color: Colors.grey.shade700),),
